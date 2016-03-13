@@ -1,0 +1,11 @@
+*.img
+*.elf
+*.o
+*.bin
+.idea
+*/**/cmake_install.cmake
+*/**/*.cbp
+*/**/CMakeCache.txt
+*/**/Makefile
+*/**/CMakeFiles/
+*.layout
