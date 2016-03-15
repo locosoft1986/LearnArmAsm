@@ -1,6 +1,7 @@
 *.img
 *.elf
 *.o
+*.obj
 *.bin
 .idea
 */**/cmake_install.cmake
