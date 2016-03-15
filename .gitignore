@@ -3,6 +3,8 @@
 *.o
 *.obj
 *.bin
+*.asm
+*.nm
 .idea
 */**/cmake_install.cmake
 */**/*.cbp

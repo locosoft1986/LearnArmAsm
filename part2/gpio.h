@@ -7,9 +7,6 @@
   #define GPIO_BASE 0x20200000UL
 #endif
 
-volatile unsigned int* gpioFs1 = (unsigned int*)(GPIO_BASE + 0x04);
-volatile unsigned int* gpioFs4 = (unsigned int*)(GPIO_BASE + 0x10);
-
 #define GPIO_GPFSEL0    0
 #define GPIO_GPFSEL1    1
 #define GPIO_GPFSEL2    2
