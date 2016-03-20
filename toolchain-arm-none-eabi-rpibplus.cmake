@@ -37,5 +37,5 @@ set( CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -mtune=arm1176jzf-s" )
 set( CMAKE_C_FLAGS "${CMAKE_C_FLAGS}" CACHE STRING "" )
 set( CMAKE_ASM_FLAGS "${CMAKE_C_FLAGS}" CACHE STRING "" )
 
-# Just add the BPLUS definition for conditional compiling
-add_definitions( -DRPIBPLUS=1 )
+# Just add the A/BPLUS definition for conditional compiling
+add_definitions( -DRPIPLUS=1 )
