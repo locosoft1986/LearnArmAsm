@@ -2,21 +2,27 @@
 ts:
 _save:
 		stmfd	r13!,	{r0-r12, r14}
-		ldr		r14, 	=running
+		mov		r0,		r13
+		bl		saveSp
+
 		mrs		r0,		cpsr
-		mrs		r1,		spsr
-		str		r13,	[r14, #4]
-		str		r0,		[r14, #8]
-		str		r1,		[r14, #12]
+		bl		saveCpsr
+
+		mrs		r0,		spsr
+		bl		saveSpsr
+		
 
 _find:
 		bl		reschedule
 
 _resume:
-		ldr		r14, 	=running
-		ldr		r1,		[r14, #12]
-		ldr		r0,		[r14, #8]
-		ldr		r13,	[r14, #4]
-		msr		spsr,	r1		
+		bl		loadSpsr
+		msr 	spsr,	r0
+
+		bl		loadCpsr
 		msr 	cpsr,	r0
+
+		bl		loadSp
+		mov		r13,	r0
+
 		ldmfd	r13!,	{r0-r12, r15}

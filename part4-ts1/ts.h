@@ -12,10 +12,7 @@ typedef struct proc {
 	volatile uint32_t stack[K_STACK_SIZE];
 } PROC;
 
-extern PROC* running;
-
 extern void reschedule();
-
 extern void ts();
 
 #endif
