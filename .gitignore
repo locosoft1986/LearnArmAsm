@@ -6,6 +6,10 @@
 *.asm
 *.nm
 .idea
+*.workspace
+*.project
+.codelite
+.clang
 */**/cmake_install.cmake
 */**/*.cbp
 */**/CMakeCache.txt
