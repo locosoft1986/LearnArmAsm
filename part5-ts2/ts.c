@@ -9,6 +9,7 @@ void reschedule()
 	running = &proc0;
 }
 
+void task_switch() __attribute__((naked));
 void task_switch()
 {
     __asm__ __volatile__ (
@@ -42,7 +43,7 @@ void task_switch()
     );
     
     __asm__ __volatile__ (
-      "ldmfd	sp!,	{r0-r12, lr} \n\t"
+      "ldmfd	sp!,	{r0-r12, pc} \n\t"
       :::"memory"
     );
 }
