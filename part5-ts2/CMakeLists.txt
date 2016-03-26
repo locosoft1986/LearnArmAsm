@@ -11,7 +11,7 @@ set( CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O0" )
 set( CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g" )
 set( CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -nostartfiles -Wl,-T,rpi.x" )
 
-add_executable( main.elf main.c start.s)
+add_executable( main.elf main.c ts.c start.s systimer.c)
 
 add_custom_command(
         TARGET main.elf POST_BUILD
