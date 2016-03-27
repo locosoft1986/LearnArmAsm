@@ -3,8 +3,8 @@
 
 #include <stdint.h>
 
-#define K_STACK_SIZE	(2048)
-#define NPROC			10
+#define K_STACK_SIZE	(2048 * 1024)
+#define NPROC			3
 
 
 

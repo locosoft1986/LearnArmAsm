@@ -4,8 +4,8 @@
 
 void cmain(void)
 {
+  init();
   while(1) {
-    init();
     task_switch();
   }
 }

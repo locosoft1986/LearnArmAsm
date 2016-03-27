@@ -15,6 +15,7 @@ void body0()
     int c = 0;
     while(1)
     {
+        c = 0;
         while(c++ < 3)
         {
             LED_ON();
@@ -22,7 +23,15 @@ void body0()
             LED_OFF();
             WaitForMicroseconds(500);
         }
-        task_switch();       
+        task_switch(); 
+        c = 0;
+        while(c++ < 4)
+        {
+            LED_ON();
+            WaitForMicroseconds(100);
+            LED_OFF();
+            WaitForMicroseconds(100);
+        }      
     }
 }
 
@@ -32,6 +41,7 @@ void body1()
     int c = 0;
     while(1)
     {
+        c = 0;
         while(c++ < 3)
         {
             LED_ON();
@@ -39,7 +49,15 @@ void body1()
             LED_OFF();
             WaitForMicroseconds(500);
         }
-        task_switch();        
+        task_switch();  
+        c = 0;
+        while(c++ < 6)
+        {
+            LED_ON();
+            WaitForMicroseconds(200);
+            LED_OFF();
+            WaitForMicroseconds(1000);
+        }      
     } 
 }
 
