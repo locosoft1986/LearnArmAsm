@@ -5,7 +5,8 @@ rm -Rf ./.codelite
 rm -Rf ./.clang
 rm CMakeCache.txt
 rm Makefile
-rm *.cbp
+rm *.asm
+rm *.nm
 rm *.workspace
 rm *.project
 rm *.cmake
