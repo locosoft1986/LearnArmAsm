@@ -1,4 +1,6 @@
 #include "util.h"
+#include "aux.h"
+
 
 #define OUTPUT_BUFFER_LENGTH (512)
 
@@ -89,6 +91,19 @@ void vsprintfk(char* buf, const char* fmt, va_list args)
 	return;
 }
 
+
+void aux_write(void* buf)
+{
+	char* p = buf;
+
+	while(*p)
+	{
+		AuxMiniUartWrite(*p);
+		++p;
+	}
+}
+
+
 void printfk(const char* fmt, ...)
 {
 	char buf[OUTPUT_BUFFER_LENGTH];
@@ -97,9 +112,20 @@ void printfk(const char* fmt, ...)
 
 	vsprintfk(buf, fmt, ap);
 
-	//TODO: output to uart
+	aux_write(buf);
 
 	va_end(ap);
 
 	return;
+}
+
+
+char kgetc()
+{
+	return AuxMiniUartRead();
+}
+
+void kputc(char c)
+{
+	AuxMiniUartWrite(c);
 }
