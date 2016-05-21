@@ -1,5 +1,5 @@
 #include "util.h"
-#include "aux.h"
+#include "rpi-aux.h"
 
 
 #define OUTPUT_BUFFER_LENGTH (512)

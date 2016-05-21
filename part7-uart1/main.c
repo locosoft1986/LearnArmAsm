@@ -1,5 +1,5 @@
 #include "gpio.h"
-#include "aux.h"
+#include "rpi-aux.h"
 #include "util.h"
 #include "systimer.h"
 

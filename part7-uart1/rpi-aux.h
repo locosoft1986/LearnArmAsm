@@ -1,5 +1,5 @@
-#ifndef __AUX_H__
-#define __AUX_H__
+#ifndef __RPI_AUX_H__
+#define __RPI_AUX_H__
 
 #include "gpio.h"
 

@@ -1,4 +1,4 @@
-#include "aux.h"
+#include "rpi-aux.h"
 #include "gpio.h"
 
 /* Define the system clock frequency in MHz for the baud rate calculation.
