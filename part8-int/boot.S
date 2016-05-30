@@ -30,7 +30,8 @@ is_done:
 inf_loop:
 		b inf_loop
 
-
+.global _vector_table_start
+.global _vector_table_end
 _vector_table_start:
 		ldr pc, _reset_h_
 		ldr pc, _undefine_instruction_h_
@@ -52,3 +53,19 @@ _fast_interrupt_h_:			.word vector_fast_interrupt
 
 _vector_table_end:
 		mov r0, r0			//nop, to fill the ARM pipeline
+
+
+.global EnableIRQ
+EnableIRQ:
+	mrs	r0, cpsr
+	bic r0, r0, #0x80
+	msr cpsr_c,r0
+	mov pc, lr
+
+
+.global DisableIRQ
+DisableIRQ:
+	mrs	r0, cpsr
+	orr	r0, r0, #0x80
+	msr	cpsr_c, r0
+	mov pc, lr

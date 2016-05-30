@@ -65,7 +65,7 @@ typedef struct {
     volatile unsigned int MU_STAT;
     volatile unsigned int MU_BAUD;
 
-    volatile unsigned int reserved2[(0x80 - 0x68) / 4];
+    volatile unsigned int reserved2[(0x80 - 0x68) / 4 - 1];
 
     volatile unsigned int SPI0_CNTL0;
     volatile unsigned int SPI0_CNTL1;
@@ -73,7 +73,7 @@ typedef struct {
     volatile unsigned int SPI0_IO;
     volatile unsigned int SPI0_PEEK;
 
-    volatile unsigned int reserved3[(0xC0 - 0x94) / 4];
+    volatile unsigned int reserved3[(0xC0 - 0x94) / 4 - 1];
 
     volatile unsigned int SPI1_CNTL0;
     volatile unsigned int SPI1_CNTL1;

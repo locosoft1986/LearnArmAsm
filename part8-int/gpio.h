@@ -2,18 +2,7 @@
 #define __GPIO_H__
 #include <stdint.h>
 
-typedef volatile uint32_t rpi_reg_rw_t;
-typedef volatile const uint32_t rpi_reg_ro_t;
-typedef volatile uint32_t rpi_reg_wo_t;
-
-typedef volatile uint64_t rpi_wreg_rw_t;
-typedef volatile const uint64_t rpi_wreg_ro_t;
-
-#ifdef RPI2
-  #define DEVICE_BASE   0x3F000000UL
-#else
-  #define DEVICE_BASE   0x20000000UL
-#endif 
+#include "rpi-base.h"
 
 typedef volatile uint32_t rpi_reg_rw_t;
 typedef volatile const uint32_t rpi_reg_ro_t;
@@ -21,8 +10,6 @@ typedef volatile uint32_t rpi_reg_wo_t;
 
 typedef volatile uint64_t rpi_wreg_rw_t;
 typedef volatile const uint64_t rpi_wreg_ro_t;
-
-#define GPIO_BASE       (DEVICE_BASE + 0x200000UL)
 
 typedef enum {
     FS_INPUT = 0,
