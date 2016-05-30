@@ -2,6 +2,7 @@
 #include "rpi-aux.h"
 #include "util.h"
 #include "systimer.h"
+#include "rpi-interrupts.h"
 
 #define DEFAULT_BAUD    115200
 
@@ -13,14 +14,15 @@ void cmain(void)
 
     LED_GPFSEL |= (1 << LED_GPFBIT);
 
+    InitVectorTable();
     AuxMiniUartInit(DEFAULT_BAUD, 8);
     
     while(i++ < 5) 
     {
         LED_ON();
-        WaitForMicroseconds(500);
+        WaitForMicroseconds(200);
         LED_OFF();
-        WaitForMicroseconds(500);
+        WaitForMicroseconds(200);
     }
     
     printfk("Initialize Complete\r\n");
