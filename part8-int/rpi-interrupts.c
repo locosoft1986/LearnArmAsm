@@ -109,8 +109,6 @@ void __attribute__((interrupt("IRQ"))) vector_interrupt( void )
 */
 void __attribute__((interrupt("FIQ"))) vector_fast_interrupt( void )
 {
-	while(1) 
-	{
-
-	}
+	static int count = 0;
+    ++count; 
 }
