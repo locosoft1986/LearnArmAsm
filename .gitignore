@@ -16,3 +16,4 @@
 */**/Makefile
 */**/CMakeFiles/
 *.layout
+.DS_Store

@@ -1,15 +1,9 @@
 #ifndef __GPIO_H__
 #define __GPIO_H__
-#include <stdint.h>
+#include "types.h"
 
 #include "rpi-base.h"
 
-typedef volatile uint32_t rpi_reg_rw_t;
-typedef volatile const uint32_t rpi_reg_ro_t;
-typedef volatile uint32_t rpi_reg_wo_t;
-
-typedef volatile uint64_t rpi_wreg_rw_t;
-typedef volatile const uint64_t rpi_wreg_ro_t;
 
 typedef enum {
     FS_INPUT = 0,
@@ -102,47 +96,47 @@ typedef enum {
     The Alternate function table also has the pull state (pull-up/pull-down)
     which is applied after a power down. */
 typedef struct {
-    rpi_reg_rw_t    GPFSEL0;
-    rpi_reg_rw_t    GPFSEL1;
-    rpi_reg_rw_t    GPFSEL2;
-    rpi_reg_rw_t    GPFSEL3;
-    rpi_reg_rw_t    GPFSEL4;
-    rpi_reg_rw_t    GPFSEL5;
-    rpi_reg_ro_t    Reserved0;
-    rpi_reg_wo_t    GPSET0;
-    rpi_reg_wo_t    GPSET1;
-    rpi_reg_ro_t    Reserved1;
-    rpi_reg_wo_t    GPCLR0;
-    rpi_reg_wo_t    GPCLR1;
-    rpi_reg_ro_t    Reserved2;
-    rpi_reg_wo_t    GPLEV0;
-    rpi_reg_wo_t    GPLEV1;
-    rpi_reg_ro_t    Reserved3;
-    rpi_reg_wo_t    GPEDS0;
-    rpi_reg_wo_t    GPEDS1;
-    rpi_reg_ro_t    Reserved4;
-    rpi_reg_wo_t    GPREN0;
-    rpi_reg_wo_t    GPREN1;
-    rpi_reg_ro_t    Reserved5;
-    rpi_reg_wo_t    GPFEN0;
-    rpi_reg_wo_t    GPFEN1;
-    rpi_reg_ro_t    Reserved6;
-    rpi_reg_wo_t    GPHEN0;
-    rpi_reg_wo_t    GPHEN1;
-    rpi_reg_ro_t    Reserved7;
-    rpi_reg_wo_t    GPLEN0;
-    rpi_reg_wo_t    GPLEN1;
-    rpi_reg_ro_t    Reserved8;
-    rpi_reg_wo_t    GPAREN0;
-    rpi_reg_wo_t    GPAREN1;
-    rpi_reg_ro_t    Reserved9;
-    rpi_reg_wo_t    GPAFEN0;
-    rpi_reg_wo_t    GPAFEN1;
-    rpi_reg_ro_t    Reserved10;
-    rpi_reg_wo_t    GPPUD;
-    rpi_reg_wo_t    GPPUDCLK0;
-    rpi_reg_wo_t    GPPUDCLK1;
-    rpi_reg_ro_t    Reserved11;
+    vu32_t          GPFSEL0;
+    vu32_t          GPFSEL1;
+    vu32_t          GPFSEL2;
+    vu32_t          GPFSEL3;
+    vu32_t          GPFSEL4;
+    vu32_t          GPFSEL5;
+    const_vu32_t    Reserved0;
+    vu32_t          GPSET0;
+    vu32_t          GPSET1;
+    const_vu32_t    Reserved1;
+    vu32_t          GPCLR0;
+    vu32_t          GPCLR1;
+    const_vu32_t    Reserved2;
+    vu32_t          GPLEV0;
+    vu32_t          GPLEV1;
+    const_vu32_t    Reserved3;
+    vu32_t          GPEDS0;
+    vu32_t          GPEDS1;
+    const_vu32_t    Reserved4;
+    vu32_t          GPREN0;
+    vu32_t          GPREN1;
+    const_vu32_t    Reserved5;
+    vu32_t          GPFEN0;
+    vu32_t          GPFEN1;
+    const_vu32_t    Reserved6;
+    vu32_t          GPHEN0;
+    vu32_t          GPHEN1;
+    const_vu32_t    Reserved7;
+    vu32_t          GPLEN0;
+    vu32_t          GPLEN1;
+    const_vu32_t    Reserved8;
+    vu32_t          GPAREN0;
+    vu32_t          GPAREN1;
+    const_vu32_t    Reserved9;
+    vu32_t          GPAFEN0;
+    vu32_t          GPAFEN1;
+    const_vu32_t    Reserved10;
+    vu32_t          GPPUD;
+    vu32_t          GPPUDCLK0;
+    vu32_t          GPPUDCLK1;
+    const_vu32_t    Reserved11;
 } rpi_gpio_t;
 
 

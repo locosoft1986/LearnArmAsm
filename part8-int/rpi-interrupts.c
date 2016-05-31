@@ -1,4 +1,6 @@
 #include "rpi-interrupts.h"
+#include "gpio.h"
+#include "rpi-armtimer.h"
 
 static irq_controller_t* rpiIRQController =
         (irq_controller_t*)RPI_INTERRUPT_CONTROLLER_BASE;
@@ -59,7 +61,24 @@ void __attribute__((interrupt("ABORT"))) vector_data_abort( void )
 
 void __attribute__((interrupt("IRQ"))) vector_interrupt( void )
 {
+    static int lit = 0;
 
+    /* Clear the ARM Timer interrupt - it's the only interrupt we have
+       enabled, so we want don't have to work out which interrupt source
+       caused us to interrupt */
+    GetArmTimer()->IRQ_CLR = 1;
+
+    /* Flip the LED */
+    if( lit )
+    {
+        LED_OFF();
+        lit = 0;
+    }
+    else
+    {
+        LED_ON();
+        lit = 1;
+    }
 }
 
 
