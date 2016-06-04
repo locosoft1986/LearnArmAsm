@@ -21,8 +21,11 @@ void cmain(void)
     GetIrqController()->ENABLE_BASIC_IRQS = RPI_BASIC_ARM_TIMER_IRQ;
 
     /* Setup the system timer interrupt */
-    /* Timer frequency = Clk/256 * 0x400 */
-    GetArmTimer()->LOAD = 0x400; //1024
+    /* http://raspberrypi.stackexchange.com/questions/699/what-spi-frequencies-does-raspberry-pi-support */
+    /* Clk = 1Mhz, Timer frequency = Clk/256 * 1024 */
+    GetArmTimer()->LOAD = 1024; 
+
+    GetArmTimer()->PREDIVIDER = 249;
 
     /* Setup the ARM Timer */
     GetArmTimer()->CONTROL =
